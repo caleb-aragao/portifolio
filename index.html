@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caleb Aragão | Estudante de Desenvolvimento Full Stack</title>
+  <meta name="description" content="Portfólio de Caleb Aragão, estudante de Desenvolvimento Full Stack. Projetos, estudos e contato.">
+
+  <!-- Fonte (Google Fonts) e ícones (Bootstrap Icons), apenas via <link> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Nosso CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== CABEÇALHO ========== -->
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <a href="#inicio" class="logo">&lt;Caleb/&gt;</a>
+
+      <nav class="menu" id="menu" aria-label="Navegação principal">
+        <a href="#sobre" class="menu__link">Sobre</a>
+        <a href="#formacao" class="menu__link">Formação</a>
+        <a href="#projetos" class="menu__link">Projetos</a>
+        <a href="#estudos" class="menu__link">Estudos</a>
+        <a href="#contato" class="menu__link">Contato</a>
+      </nav>
+
+      <div class="cabecalho__acoes">
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
+          <i class="bi bi-moon-stars-fill" id="icone-tema"></i>
+        </button>
+        <button class="botao-icone botao-hamburguer" id="botao-menu" type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <i class="bi bi-list" id="icone-menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="inicio">
+      <div class="container hero__interno">
+        <p class="hero__saudacao">Olá, eu sou</p>
+        <h1 class="hero__nome">Caleb Aragão</h1>
+        <p class="hero__digitando" aria-live="polite">
+          <span id="texto-digitado"></span><span class="cursor" aria-hidden="true"></span>
+        </p>
+        <p class="hero__descricao">Estudante de Desenvolvimento Full Stack, construindo uma base sólida começando pelo Front-end.</p>
+        <div class="hero__botoes">
+          <a href="Curriculo.pdf" download class="botao botao--primario"><i class="bi bi-download"></i> Baixar meu CV</a>
+          <a href="#projetos" class="botao botao--contorno"><i class="bi bi-grid"></i> Ver projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section class="secao" id="sobre">
+      <div class="container">
+        <h2 class="secao__titulo revelar">Sobre mim</h2>
+        <div class="sobre revelar">
+          <p class="sobre__texto">
+            Sou estudante do 1º ano do Ensino Médio Técnico em Informática para Internet pela SESC Escola, em parceria com o SENAC. Com forte foco em programação, iniciei minha trilha de aprendizado me especializando em desenvolvimento Front-end. Nos próximos anos, minha formação se expandirá para o Back-end (2º ano) e desenvolvimento Mobile (3º ano), construindo uma base sólida para me tornar um Desenvolvedor Full Stack.
+            Fora da tecnologia, a música é uma das minhas maiores paixões. Toco bateria e percussão, e já tive a oportunidade de participar de projetos musicais que me tiraram da zona de conforto. Sou uma pessoa que gosta de explorar diferentes áreas, enfrentar desafios e aprender algo novo em cada experiência. Acredito que cada interesse que desenvolvo contribui para quem sou e para a forma como enxergo o mundo.
+          </p>
+          <div>
+            <h3 class="sobre__subtitulo">Habilidades</h3>
+            <ul class="habilidades">
+              <li class="habilidade"><i class="bi bi-filetype-html"></i> HTML5</li>
+              <li class="habilidade"><i class="bi bi-filetype-css"></i> CSS3</li>
+              <li class="habilidade"><i class="bi bi-filetype-js"></i> JavaScript</li>
+              <li class="habilidade"><i class="bi bi-puzzle"></i> Lógica de Programação</li>
+              <li class="habilidade"><i class="bi bi-diagram-3"></i> Algoritmos</li>
+              <li class="habilidade"><i class="bi bi-git"></i> Git</li>
+              <li class="habilidade"><i class="bi bi-github"></i> GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORMAÇÃO (Roadmap) ========== -->
+    <section class="secao" id="formacao">
+      <div class="container">
+        <h2 class="secao__titulo revelar">Formação</h2>
+
+        <article class="cartao-formacao revelar" id="cartao-formacao">
+          <header class="cartao-formacao__topo">
+            <div>
+              <h3 class="cartao-formacao__curso">Ensino Médio Integrado ao Técnico em Informática para Internet</h3>
+              <p class="cartao-formacao__escola">SESC ESCOLA em parceria com o SENAC · Conclusão prevista: [ANO CORRETO]</p>
+            </div>
+            <div class="progresso" role="progressbar" aria-label="Progresso da trilha" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progresso">
+              <span class="progresso__rotulo" id="progresso-rotulo">Progresso da trilha: 0%</span>
+              <div class="progresso__trilho"><div class="progresso__barra" id="progresso-barra"></div></div>
+            </div>
+          </header>
+
+          <!-- Para atualizar o status, mude apenas o valor de data-status:
+              "concluido", "em-andamento" ou "futuro" -->
+          <ol class="roadmap" id="roadmap">
+            <li class="etapa" data-status="em-andamento">
+              <span class="etapa__ponto"><i class="bi bi-code-slash"></i></span>
+              <div class="etapa__corpo">
+                <h4 class="etapa__titulo">1º Ano · Front-end</h4>
+                <span class="selo-status"></span>
+                <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span></div>
+              </div>
+            </li>
+            <li class="etapa" data-status="futuro">
+              <span class="etapa__ponto"><i class="bi bi-hdd-network"></i></span>
+              <div class="etapa__corpo">
+                <h4 class="etapa__titulo">2º Ano · Back-end</h4>
+                <span class="selo-status"></span>
+                <div class="etiquetas"><span class="etiqueta">Servidores</span><span class="etiqueta">Banco de dados</span></div>
+              </div>
+            </li>
+            <li class="etapa" data-status="futuro">
+              <span class="etapa__ponto"><i class="bi bi-phone"></i></span>
+              <div class="etapa__corpo">
+                <h4 class="etapa__titulo">3º Ano · Mobile</h4>
+                <span class="selo-status"></span>
+                <div class="etiquetas"><span class="etiqueta">Apps</span><span class="etiqueta">Interfaces móveis</span></div>
+              </div>
+            </li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS E ESTUDOS ========== -->
+    <section class="secao" id="projetos">
+      <div class="container">
+        <h2 class="secao__titulo revelar">Projetos de destaque</h2>
+        <div class="grade">
+          <article class="cartao-projeto revelar">
+            <div class="cartao-projeto__imagem" role="img" aria-label="Imagem de exemplo do projeto 1"><i class="bi bi-image"></i></div>
+            <div class="cartao-projeto__corpo">
+              <h3>Compasso Musical</h3>
+              <p>O Compasso Musical é uma plataforma de e-commerce especializada na venda de instrumentos musicais e acessórios de alta qualidade.</p>
+              <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span></div>
+              <div class="cartao-projeto__botoes">
+                <a href="https://caleb-aragao.github.io/compasso-musical/" target="_blank" rel="noopener noreferrer" class="botao botao--pequeno botao--primario"><i class="bi bi-box-arrow-up-right"></i> Ver site</a>
+                <a href="https://github.com/caleb-aragao/compasso-musical" target="_blank" rel="noopener noreferrer" class="botao botao--pequeno botao--contorno"><i class="bi bi-github"></i> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cartao-projeto revelar">
+            <div class="cartao-projeto__imagem" role="img" aria-label="Imagem de exemplo do projeto 2"><i class="bi bi-image"></i></div>
+            <div class="cartao-projeto__corpo">
+              <h3>DevSetup</h3>
+              <p>O DevSetup é uma plataforma de e-commerce especializada no fornecimento de peças eletrônicas e dispositivos de informática das principais marcas do mercado.</p>
+              <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span></div>
+              <div class="cartao-projeto__botoes">
+                <a href="https://caleb-aragao.github.io/projeto-devsetup/" target="_blank" rel="noopener noreferrer" class="botao botao--pequeno botao--primario"><i class="bi bi-box-arrow-up-right"></i> Ver site</a>
+                <a href="https://github.com/caleb-aragao/projeto-devsetup" target="_blank" rel="noopener noreferrer" class="botao botao--pequeno botao--contorno"><i class="bi bi-github"></i> Código</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="cartao-projeto cartao-projeto--vazio revelar">
+            <i class="bi bi-plus-circle"></i>
+            <p>Novos projetos em breve</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="estudos">
+      <div class="container">
+        <h2 class="secao__titulo revelar">Repositórios de estudo</h2>
+        <ul class="lista-estudos">
+          <li class="revelar"><a href="https://github.com/caleb-aragao/html" target="_blank" rel="noopener noreferrer" class="item-estudo"><i class="bi bi-filetype-html"></i><span>Trilha de HTML e CSS</span><i class="bi bi-arrow-up-right item-estudo__seta"></i></a></li>
+          <li class="revelar"><a href="https://github.com/caleb-aragao/JavaScript" target="_blank" rel="noopener noreferrer" class="item-estudo"><i class="bi bi-filetype-js"></i><span>Trilha de JavaScript Vanilla</span><i class="bi bi-arrow-up-right item-estudo__seta"></i></a></li>
+          <li class="revelar"><a href="https://github.com/caleb-aragao/algoritmos" target="_blank" rel="noopener noreferrer" class="item-estudo"><i class="bi bi-diagram-3"></i><span>Lógica de Programação e Algoritmos (Portugol)</span><i class="bi bi-arrow-up-right item-estudo__seta"></i></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section class="secao" id="contato">
+      <div class="container">
+        <h2 class="secao__titulo revelar">Vamos conversar?</h2>
+        <p class="secao__intro revelar">Escolha o canal que preferir. Respondo por todos eles.</p>
+        <div class="grade-contatos">
+          <a href="mailto:calebaragao@gmail.com" target="_blank" rel="noopener noreferrer" class="contato contato--email revelar"><i class="bi bi-envelope-fill"></i><span>E-mail</span></a>
+          <a href="https://github.com/caleb-aragao" target="_blank" rel="noopener noreferrer" class="contato contato--github revelar"><i class="bi bi-github"></i><span>GitHub</span></a>
+          <a href="https://wa.me/5565993278788" target="_blank" rel="noopener noreferrer" class="contato contato--whatsapp revelar"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+          <a href="https://www.instagram.com/caleb_aragao_/" target="_blank" rel="noopener noreferrer" class="contato contato--instagram revelar"><i class="bi bi-instagram"></i><span>Instagram</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer class="rodape">
+    <p>Copyright © <span id="ano-atual"></span> · Desenvolvido com <i class="bi bi-heart-fill coracao" aria-label="amor"></i> por Caleb Aragão</p>
+  </footer>
+
+  <button class="voltar-topo" id="voltar-topo" type="button" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Nosso JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
